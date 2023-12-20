@@ -124,6 +124,9 @@ class Body1 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Text(
                             'Alex Marconi',
                             style: TextStyle(
@@ -226,146 +229,6 @@ class Body1 extends StatelessWidget {
     );
   }
 }
-
-// class Body1 extends StatelessWidget {
-//   const Body1({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.all(0.0),
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Container(
-//             color: Colors.white,
-//             child: Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Column(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 children: [
-//                   const SizedBox(
-//                     height: 8,
-//                   ),
-//                   const Padding(
-//                     padding: EdgeInsets.all(8.0),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: <Widget>[
-//                         Text(
-//                           'Hello',
-//                           style: TextStyle(
-//                             fontSize: 16,
-//                             color: Color.fromARGB(255, 113, 110, 110),
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                         Text(
-//                           'Alex Marconi',
-//                           style: TextStyle(
-//                             fontSize: 24,
-//                             color: Colors.black,
-//                             fontWeight: FontWeight.bold,
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(
-//                     height: 22,
-//                   ),
-//                   Column(
-//                     mainAxisAlignment: MainAxisAlignment
-//                         .center, // Centers the rows on the main axis
-//                     children: <Widget>[
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment
-//                             .spaceEvenly, // Even spacing between the buttons
-//                         children: <Widget>[
-//                           _buildButton(context, Icons.loop, 'In Progress',
-//                               const Color.fromARGB(255, 249, 190, 101)),
-//                           const SizedBox(
-//                             width: 10,
-//                           ),
-//                           _buildButton(context, Icons.cached, 'Ongoing',
-//                               const Color.fromARGB(255, 111, 134, 248)),
-//                         ],
-//                       ),
-//                       const SizedBox(height: 16), // Spacing between the rows
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment
-//                             .spaceEvenly, // Even spacing between the buttons
-//                         children: <Widget>[
-//                           _buildButton(context, Icons.check_circle, 'Completed',
-//                               const Color.fromARGB(255, 98, 217, 102)),
-//                           const SizedBox(
-//                             width: 10,
-//                           ),
-//                           _buildButton(context, Icons.cancel, 'Cancel',
-//                               const Color.fromARGB(255, 252, 100, 66)),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//           const Padding(
-//             padding: EdgeInsets.only(left: 8, right: 8, top: 22.0, bottom: 10),
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 Text(
-//                   "Daily Task",
-//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-//                 ),
-//                 Text(
-//                   "All Tasks",
-//                   style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 14,
-//                       color: Colors.grey),
-//                 )
-//               ],
-//             ),
-//           ),
-//           Expanded(
-//             child: ListView(
-//               children: [
-//                 CustomListTile(
-//                   valuecolor: kblue,
-//                   leadicon: Icon(
-//                     Icons.check_circle_rounded,
-//                     color: kblue,
-//                   ),
-//                   text: 'DashBoard Design',
-//                 ),
-//                 const CustomListTile(
-//                   valuecolor: Colors.amber,
-//                   leadicon: Icon(
-//                     Icons.check_circle_outline,
-//                   ),
-//                   text: 'App Animation',
-//                 ),
-//                 const CustomListTile(
-//                   valuecolor: Colors.green,
-//                   leadicon: Icon(
-//                     Icons.check_circle_rounded,
-//                     color: Colors.green,
-//                   ),
-//                   text: 'UI/UX Design',
-//                 ),
-//               ],
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class CustomListTile extends StatelessWidget {
   final Color valuecolor;

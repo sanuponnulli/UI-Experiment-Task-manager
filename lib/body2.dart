@@ -57,7 +57,7 @@ class _Body2State extends State<Body2> {
                       ),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

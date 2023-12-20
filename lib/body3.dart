@@ -291,102 +291,111 @@ class Chartt extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 4),
         const SizedBox(height: 16),
         Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            // border: Border.all(
+            //     color: Color(
+            //         0xFFCCCCCC)), // Example border color, adjust as needed
+            borderRadius: BorderRadius.circular(12.0),
+          ),
           height: 200,
-          child: LineChart(
-            LineChartData(
-              minX: 0, // Starting point of the X axis
-              maxX: 5, // Ending point of the X axis, assuming 6 days a week
-              minY: 0, // Starting point of the Y axis
-              maxY: 8, // Ending point of the Y axis, adjust as per your data
-              gridData: const FlGridData(show: false), // No grid data
-              titlesData: FlTitlesData(
-                bottomTitles: AxisTitles(
-                  sideTitles: SideTitles(
-                    showTitles: true,
-                    reservedSize: 20, // Adjust the size for titles
-                    getTitlesWidget: (double value, TitleMeta meta) {
-                      const style = TextStyle(
-                        color: Color(0xff68737d),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 10,
-                      );
-                      Widget text;
-                      switch (value.toInt()) {
-                        case 0:
-                          text = const Text('Sun', style: style);
-                          break;
-                        case 1:
-                          text = const Text('Mon', style: style);
-                          break;
-                        case 2:
-                          text = const Text('Tue', style: style);
-                          break;
-                        case 3:
-                          text = const Text('Wed', style: style);
-                          break;
-                        case 4:
-                          text = const Text('Thu', style: style);
-                          break;
-                        case 5:
-                          text = const Text('Fri', style: style);
-                          break;
-                        default:
-                          text = const Text('');
-                      }
-                      return SideTitleWidget(
-                        axisSide: meta.axisSide,
-                        space: 8.0,
-                        child: text,
-                      );
-                    },
-                  ),
-                ),
-                topTitles:
-                    const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                rightTitles:
-                    const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                leftTitles: const AxisTitles(
-                  sideTitles: SideTitles(showTitles: true),
-                ),
-              ),
-              borderData: FlBorderData(show: false), // No border
-              lineBarsData: [
-                LineChartBarData(
-                  spots: [
-                    const FlSpot(0, 3),
-                    const FlSpot(1, 4),
-                    const FlSpot(2, 2),
-                    const FlSpot(3, 5),
-                    const FlSpot(4, 3),
-                    const FlSpot(5, 6),
-                  ],
-                  isCurved: true,
-                  color: const Color.fromARGB(255, 149, 230,
-                      120), // Adjust the color to match your image
-                  barWidth: 5, // Adjust the width to match your image
-                  dotData: const FlDotData(show: false), // Hide or style dots
-                  belowBarData: BarAreaData(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color.fromARGB(255, 113, 244, 121)
-                            .withOpacity(0.5),
-                        const Color.fromARGB(255, 115, 243, 72)
-                            .withOpacity(0.0),
-                      ],
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: LineChart(
+              LineChartData(
+                minX: 0, // Starting point of the X axis
+                maxX: 5, // Ending point of the X axis, assuming 6 days a week
+                minY: 0, // Starting point of the Y axis
+                maxY: 4, // Ending point of the Y axis, adjust as per your data
+                gridData: const FlGridData(show: false), // No grid data
+                titlesData: FlTitlesData(
+                  bottomTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                      showTitles: true,
+                      reservedSize: 20, // Adjust the size for titles
+                      getTitlesWidget: (double value, TitleMeta meta) {
+                        const style = TextStyle(
+                          color: Color(0xff68737d),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                        );
+                        Widget text;
+                        switch (value.toInt()) {
+                          case 0:
+                            text = const Text('Sun', style: style);
+                            break;
+                          case 1:
+                            text = const Text('Mon', style: style);
+                            break;
+                          case 2:
+                            text = const Text('Tue', style: style);
+                            break;
+                          case 3:
+                            text = const Text('Wed', style: style);
+                            break;
+                          case 4:
+                            text = const Text('Thu', style: style);
+                            break;
+                          case 5:
+                            text = const Text('Fri', style: style);
+                            break;
+                          default:
+                            text = const Text('');
+                        }
+                        return SideTitleWidget(
+                          axisSide: meta.axisSide,
+                          space: 8.0,
+                          child: text,
+                        );
+                      },
                     ),
-                    show: true,
-                    // Adjust gradient to match your image
-                    // gradientFrom: const Offset(0.5, 0), // Adjust gradient positioning
-                    // gradientTo: const Offset(0.5, 1), // Adjust gradient positioning
+                  ),
+                  topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  leftTitles: const AxisTitles(
+                    sideTitles: SideTitles(showTitles: true),
                   ),
                 ),
-              ],
-              // Additional settings for the background color and other styles
-              backgroundColor:
-                  Colors.white, // Set the background color if necessary
+                borderData: FlBorderData(show: false), // No border
+                lineBarsData: [
+                  LineChartBarData(
+                    spots: [
+                      const FlSpot(0, 2),
+                      const FlSpot(1, 1),
+                      const FlSpot(2, 3),
+                      const FlSpot(3, 1),
+                      const FlSpot(4, 4),
+                      const FlSpot(5, 2),
+                    ],
+                    isCurved: true,
+                    color: const Color.fromARGB(255, 149, 230,
+                        120), // Adjust the color to match your image
+                    barWidth: 5, // Adjust the width to match your image
+                    dotData: const FlDotData(show: false), // Hide or style dots
+                    belowBarData: BarAreaData(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color.fromARGB(255, 113, 244, 121)
+                              .withOpacity(0.5),
+                          const Color.fromARGB(255, 115, 243, 72)
+                              .withOpacity(0.0),
+                        ],
+                      ),
+                      show: true,
+                      // Adjust gradient to match your image
+                      // gradientFrom: const Offset(0.5, 0), // Adjust gradient positioning
+                      // gradientTo: const Offset(0.5, 1), // Adjust gradient positioning
+                    ),
+                  ),
+                ],
+                // Additional settings for the background color and other styles
+                backgroundColor:
+                    Colors.white, // Set the background color if necessary
+              ),
             ),
           ),
         ),
